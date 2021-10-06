@@ -6,7 +6,7 @@
 /*   By: bprovoos <bprovoos@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/22 10:16:15 by bprovoos      #+#    #+#                 */
-/*   Updated: 2021/10/04 19:53:26 by bprovoos      ########   odam.nl         */
+/*   Updated: 2021/10/06 08:05:13 by bprovoos      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,10 +101,10 @@ static int	put_numbers(va_list args, char conversion)
 		str = ft_itoa_long_base(va_arg(args, unsigned int), 10);
 	else if (conversion == 'x' || conversion == 'X')
 		str = ft_itoa_long_base(va_arg(args, unsigned int), 16);
-	if (conversion == 'X')
-		ft_strtoupper(str);
 	if (!str)
 		return (0);
+	if (conversion == 'X')
+		ft_strtoupper(str);
 	length += ft_putstr_fd(str, 1);
 	free(str);
 	str = NULL;
